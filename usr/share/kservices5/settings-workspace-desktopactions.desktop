@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=SystemSettingsCategory
+X-KDE-System-Settings-Category=desktopactions
+X-KDE-System-Settings-Parent-Category=personalization
+X-KDE-Weight=4
+Icon=preferences-desktop
+
+Name=Screen Actions

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=SystemSettingsCategory
+X-KDE-System-Settings-Category=audiocat
+X-KDE-System-Settings-Parent-Category=system
+X-KDE-Weight=3
+Icon=preferences-desktop-sound
+
+Name=Audio

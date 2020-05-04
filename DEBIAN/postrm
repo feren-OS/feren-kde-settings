@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sed -i 's%if (false) { //Patched by feren-kde-settings%if (KCMShell.authorize("formats.desktop").length > 0) {%g' /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/main.qml
+sed -i 's%if (false) { //Patched by feren-kde-settings%if (KCMShell.authorize("formats.desktop").length > 0) {%g' /usr/share/plasma/plasmoids/org.feren.ferenclock/contents/ui/main.qml

@@ -1,0 +1,683 @@
+#!/bin/bash
+
+# Theme Category
+if [ -f "/usr/share/kservices5/kcm_lookandfeel.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_lookandfeel.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_lookandfeel.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_lookandfeel.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kcm_lookandfeel.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_desktoplayout.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_desktoplayout.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_desktoplayout.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_desktoplayout.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kcm_desktoplayout.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_desktoptheme.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_desktoptheme.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_desktoptheme.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_desktoptheme.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/kcm_desktoptheme.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwindecoration.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kwindecoration.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwindecoration.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwindecoration.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/kwindecoration.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_style.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_style.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_style.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_style.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/kcm_style.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_icons.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_icons.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_icons.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_icons.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/kcm_icons.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_colors.desktop" ]; then
+    #5.16 and later
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_colors.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_colors.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_colors.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/kcm_colors.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_cursortheme.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_cursortheme.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_cursortheme.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_cursortheme.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=7" "/usr/share/kservices5/kcm_cursortheme.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_splashscreen.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=theme' "/usr/share/kservices5/kcm_splashscreen.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_splashscreen.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_splashscreen.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=8" "/usr/share/kservices5/kcm_splashscreen.desktop"
+fi
+
+
+# Appearance Category
+if [ -f "/usr/share/kservices5/kcm_kwin_effects.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=catappearance' "/usr/share/kservices5/kcm_kwin_effects.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_kwin_effects.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_kwin_effects.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/kcm_kwin_effects.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-appearance-font.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=catappearance' "/usr/share/kservices5/settings-appearance-font.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-appearance-font.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-appearance-font.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/settings-appearance-font.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-windowmanagement.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=catappearance' "/usr/share/kservices5/settings-workspace-windowmanagement.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace-windowmanagement.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace-windowmanagement.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/settings-workspace-windowmanagement.desktop"
+fi
+if [ -f "/usr/share/kservices5/screenlocker.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=catappearance' "/usr/share/kservices5/screenlocker.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/screenlocker.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/screenlocker.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/screenlocker.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcmaccess.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=catappearance' "/usr/share/kservices5/kcmaccess.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcmaccess.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcmaccess.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/kcmaccess.desktop"
+fi
+
+# Advanced Settings Desktop Area
+if [ -f "/usr/share/kservices5/emoticons.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advanceddesktop' "/usr/share/kservices5/emoticons.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/emoticons.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/emoticons.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/emoticons.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_launchfeedback.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advanceddesktop' "/usr/share/kservices5/kcm_launchfeedback.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_launchfeedback.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_launchfeedback.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/kcm_launchfeedback.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwincompositing.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advanceddesktop' "/usr/share/kservices5/kwincompositing.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwincompositing.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwincompositing.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/kwincompositing.desktop"
+fi
+
+# Personalisation Category
+if [ -f "/usr/share/kservices5/user_manager.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/user_manager.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/user_manager.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/user_manager.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/user_manager.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-personalization-accountdetails.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-personalization-accountdetails.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-personalization-accountdetails.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-personalization-accountdetails.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/settings-personalization-accountdetails.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-personalization-applications.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-personalization-applications.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-personalization-applications.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-personalization-applications.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/settings-personalization-applications.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-personalization-regionalsettings.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-personalization-regionalsettings.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-personalization-regionalsettings.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-personalization-regionalsettings.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/settings-personalization-regionalsettings.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-desktopbehavior.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-workspace-desktopbehavior.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace-desktopbehavior.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace-desktopbehavior.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/settings-workspace-desktopbehavior.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-personalization-notification.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-personalization-notification.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-personalization-notification.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-personalization-notification.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/settings-personalization-notification.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-shortcuts.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-workspace-shortcuts.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace-shortcuts.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace-shortcuts.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/settings-workspace-shortcuts.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=7" "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-session.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/settings-workspace-session.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace-session.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace-session.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=8" "/usr/share/kservices5/settings-workspace-session.desktop"
+fi
+if [ -f "/usr/share/kservices5/plasma-kdeconnect.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/plasma-kdeconnect.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/plasma-kdeconnect.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/plasma-kdeconnect.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=9" "/usr/share/kservices5/plasma-kdeconnect.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_kdeconnect.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=personalization' "/usr/share/kservices5/kcm_kdeconnect.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_kdeconnect.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_kdeconnect.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=10" "/usr/share/kservices5/kcm_kdeconnect.desktop"
+fi
+
+#Advanced Options Personalisation Area
+if [ -f "/usr/share/kservices5/kcm_plasmasearch.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kcm_plasmasearch.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_plasmasearch.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_plasmasearch.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kcm_plasmasearch.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_baloofile.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kcm_baloofile.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_baloofile.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_baloofile.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/kcm_baloofile.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwalletconfig5.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kwalletconfig5.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwalletconfig5.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwalletconfig5.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/kwalletconfig5.desktop"
+fi
+if [ -f "/usr/share/kservices5/smb.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/smb.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/smb.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/smb.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/smb.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_kaccounts.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kcm_kaccounts.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_kaccounts.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_kaccounts.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/kcm_kaccounts.desktop"
+fi
+if [ -f "/usr/share/kservices5/audiocd.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/audiocd.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/audiocd.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/audiocd.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/audiocd.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwinscripts.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kwinscripts.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwinscripts.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwinscripts.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=7" "/usr/share/kservices5/kwinscripts.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwinrules.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kwinrules.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwinrules.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwinrules.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=8" "/usr/share/kservices5/kwinrules.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_activities.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/kcm_activities.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_activities.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_activities.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=9" "/usr/share/kservices5/kcm_activities.desktop"
+fi
+if [ -f "/usr/share/kservices5/powerdevilactivitiesconfig.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedpersonalization' "/usr/share/kservices5/powerdevilactivitiesconfig.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/powerdevilactivitiesconfig.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/powerdevilactivitiesconfig.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=10" "/usr/share/kservices5/powerdevilactivitiesconfig.desktop"
+fi
+
+# Desktop Actions Category
+if [ -f "/usr/share/kservices5/kwinscreenedges.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=desktopactions' "/usr/share/kservices5/kwinscreenedges.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwinscreenedges.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwinscreenedges.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kwinscreenedges.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwintouchscreen.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=desktopactions' "/usr/share/kservices5/kwintouchscreen.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kwintouchscreen.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kwintouchscreen.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kwintouchscreen.desktop"
+fi
+
+# Desktop Behaviour Category
+if [ -f "/usr/share/kservices5/settings-workspace.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=desktopbehavior' "/usr/share/kservices5/settings-workspace.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/settings-workspace.desktop"
+fi
+
+# Regional Settings Category
+if [ -f "/usr/share/kservices5/kcm_translations.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=regionalsettings' "/usr/share/kservices5/kcm_translations.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_translations.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_translations.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kcm_translations.desktop"
+fi
+if [ -f "/usr/share/kservices5/formats.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=regionalsettings' "/usr/share/kservices5/formats.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/formats.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/formats.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/formats.desktop"
+fi
+if [ -f "/usr/share/kservices5/clock.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=regionalsettings' "/usr/share/kservices5/clock.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/clock.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/clock.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/clock.desktop"
+fi
+
+# Applications Category
+if [ -f "/usr/share/kservices5/componentchooser.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=applications' "/usr/share/kservices5/componentchooser.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/componentchooser.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/componentchooser.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/componentchooser.desktop"
+fi
+if [ -f "/usr/share/kservices5/filetypes.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=applications' "/usr/share/kservices5/filetypes.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/filetypes.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/filetypes.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/filetypes.desktop"
+fi
+
+# Startup & Shutdown Category
+if [ -f "/usr/share/kservices5/autostart.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=session' "/usr/share/kservices5/autostart.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/autostart.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/autostart.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/autostart.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcmsmserver.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=session' "/usr/share/kservices5/kcmsmserver.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcmsmserver.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcmsmserver.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kcmsmserver.desktop"
+fi
+
+# System Category
+if [ -f "/usr/share/kservices5/settings-hardware-input.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-hardware-input.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-hardware-input.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-hardware-input.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/settings-hardware-input.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-hardware-display.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-hardware-display.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-hardware-display.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-hardware-display.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/settings-hardware-display.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-network-bluetooth.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-network-bluetooth.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-network-bluetooth.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-network-bluetooth.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/settings-network-bluetooth.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-hardware-powermanagement.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-hardware-powermanagement.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-hardware-powermanagement.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-hardware-powermanagement.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/settings-hardware-powermanagement.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_whoopsie.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/kcm_whoopsie.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_whoopsie.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_whoopsie.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/kcm_whoopsie.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-hardware-removable-storage.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-hardware-removable-storage.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-hardware-removable-storage.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-hardware-removable-storage.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/settings-hardware-removable-storage.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-network.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/settings-network.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-network.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-network.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=7" "/usr/share/kservices5/settings-network.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_printer_manager.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/kcm_printer_manager.desktop"
+	sed -i '/X-KDE-System-Settings-Parent-Category-V2=/c\X-KDE-System-Settings-Parent-Category-V2=system' "/usr/share/kservices5/kcm_printer_manager.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_printer_manager.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_printer_manager.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=8" "/usr/share/kservices5/kcm_printer_manager.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_bolt.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=system' "/usr/share/kservices5/kcm_bolt.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_bolt.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_bolt.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=9" "/usr/share/kservices5/kcm_bolt.desktop"
+fi
+
+# Advanced Settings System area
+if [ -f "/usr/share/kservices5/fontinst.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/fontinst.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/fontinst.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/fontinst.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/fontinst.desktop"
+fi
+if [ -f "/usr/share/kservices5/kgamma.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/kgamma.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kgamma.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kgamma.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kgamma.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcmkded.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/kcmkded.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcmkded.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcmkded.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/kcmkded.desktop"
+fi
+if [ -f "/usr/share/kservices5/netpref.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/netpref.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/netpref.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/netpref.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/netpref.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_ssl.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/kcm_ssl.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_ssl.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_ssl.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/kcm_ssl.desktop"
+fi
+if [ -f "/usr/share/kservices5/cache.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/cache.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/cache.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/cache.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/cache.desktop"
+fi
+if [ -f "/usr/share/kservices5/cookies.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/cookies.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/cookies.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/cookies.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/cookies.desktop"
+fi
+if [ -f "/usr/share/kservices5/useragent.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/useragent.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/useragent.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/useragent.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=7" "/usr/share/kservices5/useragent.desktop"
+fi
+if [ -f "/usr/share/kservices5/desktoppath.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/desktoppath.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/desktoppath.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/desktoppath.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=8" "/usr/share/kservices5/desktoppath.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_sddm.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/kcm_sddm.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_sddm.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_sddm.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=9" "/usr/share/kservices5/kcm_sddm.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_plymouth.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advancedsystem' "/usr/share/kservices5/kcm_plymouth.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_plymouth.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_plymouth.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=10" "/usr/share/kservices5/kcm_plymouth.desktop"
+fi
+
+# Audio Category
+if [ -f "/usr/share/kservices5/kcm_pulseaudio.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=audiocat' "/usr/share/kservices5/kcm_pulseaudio.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_pulseaudio.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_pulseaudio.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kcm_pulseaudio.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_phonon.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=audiocat' "/usr/share/kservices5/kcm_phonon.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_phonon.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_phonon.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/kcm_phonon.desktop"
+fi
+
+# Network Category
+if [ -f "/usr/share/kservices5/kcm_networkmanagement.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=network' "/usr/share/kservices5/kcm_networkmanagement.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_networkmanagement.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_networkmanagement.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kcm_networkmanagement.desktop"
+fi
+if [ -f "/usr/share/kservices5/proxy.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=network' "/usr/share/kservices5/proxy.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/proxy.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/proxy.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/proxy.desktop"
+fi
+
+# Advanced Category
+if [ -f "/usr/share/kservices5/settings-network-connectivity.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advanced' "/usr/share/kservices5/settings-network-connectivity.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-network-networksettings.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=advanced' "/usr/share/kservices5/settings-network-networksettings.desktop"
+fi
+
+# Hidden Categories
+if [ -f "/usr/share/kservices5/settings-workspace.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=' "/usr/share/kservices5/settings-workspace.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/settings-workspace.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/settings-workspace.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=990" "/usr/share/kservices5/settings-workspace.desktop"
+fi
+
+
+#Fix icons choices
+if [ -f "/usr/share/kservices5/kwinscreenedges.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-gestures-screenedges" "/usr/share/kservices5/kwinscreenedges.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwintouchscreen.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-gestures-touch" "/usr/share/kservices5/kwintouchscreen.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcmkwineffects.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-effects" "/usr/share/kservices5/kcmkwineffects.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-virtual" "/usr/share/kservices5/kcm_kwin_virtualdesktops.desktop"
+fi
+if [ -f "/usr/share/kservices5/kwindecoration.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-theme-windowdecorations" "/usr/share/kservices5/kwindecoration.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-session.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-startup-programs" "/usr/share/kservices5/settings-workspace-session.desktop"
+fi
+if [ -f "/usr/share/kservices5/autostart.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-startup-programs" "/usr/share/kservices5/autostart.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_plymouth.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-system-startup" "/usr/share/kservices5/kcm_plymouth.desktop"
+fi
+if [ -f "/usr/share/kservices5/settings-workspace-desktopactions.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-gestures-screenedges" "/usr/share/kservices5/settings-workspace-desktopactions.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_kaccounts.desktop" ]; then
+	sed -i "/Icon=/c\Icon=preferences-desktop-online-accounts" "/usr/share/kservices5/kcm_kaccounts.desktop"
+fi
+if [ -f "/usr/share/kservices5/kcm_whoopsie.desktop" ]; then
+	sed -i "/Icon=/c\Icon=apport" "/usr/share/kservices5/kcm_whoopsie.desktop"
+fi
+
+#Pages to hide
+if [ -f "/usr/share/kservices5/kcm_translations.desktop" ]; then
+    sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/kcm_translations.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/kcm_translations.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/kcm_translations.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=0" "/usr/share/kservices5/kcm_translations.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/kcm_translations.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/kcm_translations.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/kcm_translations.desktop"
+fi
+if [ -f "/usr/share/kservices5/formats.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/formats.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/formats.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/formats.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=1" "/usr/share/kservices5/formats.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/formats.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/formats.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/formats.desktop"
+	sed -i 's%if (KCMShell.authorize("formats.desktop").length > 0) {%if (false) { //Patched by feren-kde-settings%g' /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/main.qml
+	sed -i 's%if (KCMShell.authorize("formats.desktop").length > 0) {%if (false) { //Patched by feren-kde-settings%g' /usr/share/plasma/plasmoids/org.feren.ferenclock/contents/ui/main.qml
+fi
+if [ -f "/usr/share/kservices5/spellchecking.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/spellchecking.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/spellchecking.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/spellchecking.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=2" "/usr/share/kservices5/spellchecking.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/spellchecking.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/spellchecking.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/spellchecking.desktop"
+fi
+if [ -f "/usr/share/kservices5/webshortcuts.desktop" ]; then
+	sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/webshortcuts.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/webshortcuts.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/webshortcuts.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=3" "/usr/share/kservices5/webshortcuts.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/webshortcuts.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/webshortcuts.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/webshortcuts.desktop"
+fi
+
+#Pages to hide when there's no Konqueror
+if [ -f "/usr/share/kservices5/cache.desktop" ] && [ ! -f "/usr/bin/konqueror" ]; then
+    sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/cache.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/cache.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/cache.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=4" "/usr/share/kservices5/cache.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/cache.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/cache.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/cache.desktop"
+elif [ -f "/usr/share/kservices5/cache.desktop" ]; then
+    sed -i "/NotShowIn=/c\NotShowIn=" "/usr/share/kservices5/cache.desktop"
+fi
+if [ -f "/usr/share/kservices5/cookies.desktop" ] && [ ! -f "/usr/bin/konqueror" ]; then
+    sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/cookies.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/cookies.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/cookies.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=5" "/usr/share/kservices5/cookies.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/cookies.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/cookies.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/cookies.desktop"
+elif [ -f "/usr/share/kservices5/cookies.desktop" ]; then
+    sed -i "/NotShowIn=/c\NotShowIn=" "/usr/share/kservices5/cookies.desktop"
+fi
+if [ -f "/usr/share/kservices5/useragent.desktop" ] && [ ! -f "/usr/bin/konqueror" ]; then
+    sed -i '/X-KDE-System-Settings-Parent-Category=/c\X-KDE-System-Settings-Parent-Category=hidden' "/usr/share/kservices5/useragent.desktop"
+	if ! grep -q "X-KDE-Weight=" "/usr/share/kservices5/useragent.desktop"; then
+        echo "X-KDE-Weight=0" >> "/usr/share/kservices5/useragent.desktop"
+    fi
+	sed -i "/X-KDE-Weight=/c\X-KDE-Weight=6" "/usr/share/kservices5/useragent.desktop"
+	if ! grep -q "NotShowIn=" "/usr/share/kservices5/useragent.desktop"; then
+        echo "NotShowIn=KDE;" >> "/usr/share/kservices5/useragent.desktop"
+    fi
+	sed -i "/NotShowIn=/c\NotShowIn=KDE;" "/usr/share/kservices5/useragent.desktop"
+elif [ -f "/usr/share/kservices5/useragent.desktop" ]; then
+    sed -i "/NotShowIn=/c\NotShowIn=" "/usr/share/kservices5/useragent.desktop"
+fi
+
+#External scripts
+if [ -f "/var/lib/dpkg/info/feren-online-accounts.postinst" ]; then
+    /var/lib/dpkg/info/feren-online-accounts.postinst
+fi

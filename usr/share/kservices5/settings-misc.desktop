@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=SystemSettingsCategory
+X-KDE-System-Settings-Category=misc
+X-KDE-System-Settings-Parent-Category=advanced
+X-KDE-Weight=70
+Icon=preferences-other
+
+Name=Other
